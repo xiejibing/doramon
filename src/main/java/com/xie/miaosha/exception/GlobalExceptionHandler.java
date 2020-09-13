@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
-//对ｃｏｎｔｒｏｌler的方法进行增强AOP
+/**
+ * @author 14423
+ */
 @ControllerAdvice
 @ResponseBody
 public class GlobalExceptionHandler {
@@ -31,7 +33,8 @@ public class GlobalExceptionHandler {
             GlobalException ex = (GlobalException) e;
             return Result.error(ex.getCodeMsg());
         }
-        else
+        else {
             return Result.error(CodeMsg.SERVER_ERROR);
+        }
     }
 }

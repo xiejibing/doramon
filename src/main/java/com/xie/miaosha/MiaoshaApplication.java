@@ -3,6 +3,9 @@ package com.xie.miaosha;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author 14423
+ */
 @SpringBootApplication
 public class MiaoshaApplication {
 

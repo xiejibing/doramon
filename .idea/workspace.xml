@@ -1,8 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="067e2634-3abc-4990-979b-1bd287660ca2" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="067e2634-3abc-4990-979b-1bd287660ca2" name="Default Changelist" comment="update files">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doramon.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_58.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_69.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/MiaoshaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/MiaoshaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/config/UserArgumentResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/config/UserArgumentResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/controller/MiaoshaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/controller/MiaoshaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/dao/GoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/dao/GoodsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/domain/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/domain/Goods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/domain/MiaoshaGoods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/domain/MiaoshaGoods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/domain/MiaoshaOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/domain/MiaoshaOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/domain/MiaoshaUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/domain/MiaoshaUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/domain/OrderInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/domain/OrderInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/exception/GlobalException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/exception/GlobalException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/rabbitmq/MQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/rabbitmq/MqConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/rabbitmq/MQReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/rabbitmq/MqReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/rabbitmq/MQSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/rabbitmq/MqSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/rabbitmq/MiaoshaMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/rabbitmq/MiaoshaMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/result/CodeMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/result/CodeMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/result/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/service/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/service/GoodsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/service/MiaoshaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/service/MiaoshaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/service/MiaoshaUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/service/MiaoshaUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/utils/UUIDUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/utils/UUIDUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/vo/GoodsDetailVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/vo/GoodsDetailVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/vo/GoodsVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/vo/GoodsVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/vo/LoginVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/vo/LoginVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/vo/OrderDetailVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xie/miaosha/vo/OrderDetailVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/miaosha.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xie/miaosha/controller/MiaoshaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xie/miaosha/controller/MiaoshaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xie/miaosha/domain/Goods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xie/miaosha/domain/Goods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xie/miaosha/domain/MiaoshaGoods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xie/miaosha/domain/MiaoshaGoods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xie/miaosha/domain/MiaoshaOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xie/miaosha/domain/MiaoshaOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xie/miaosha/domain/MiaoshaUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xie/miaosha/domain/MiaoshaUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xie/miaosha/domain/OrderInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xie/miaosha/domain/OrderInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xie/miaosha/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xie/miaosha/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xie/miaosha/exception/GlobalException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xie/miaosha/exception/GlobalException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xie/miaosha/result/CodeMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xie/miaosha/result/CodeMsg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xie/miaosha/result/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xie/miaosha/result/Result.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,31 +115,39 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="/usr/Maven" />
+        <option name="localRepository" value="C:\Users\14423\.m2\repository" />
+        <option name="userSettingsFile" value="C:\Users\14423\.m2\settings.xml" />
       </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="1ZWyLduvBWQPMeGX6E4yNp6Hv5M" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -83,104 +164,36 @@
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Spring Boot.MiaoshaApplication">
-    <configuration name="MD5Util" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xie.miaosha.utils.MD5Util" />
-      <module name="miaosha" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xie.miaosha.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xie.miaosha.utils.UserUtil" />
-      <module name="miaosha" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xie.miaosha.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ValidatorUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xie.miaosha.utils.ValidatorUtils" />
-      <module name="miaosha" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xie.miaosha.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MiaoshaApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="miaosha" />
+  <component name="RunManager">
+    <configuration name="MiaoshaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="doramon" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.xie.miaosha.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.xie.miaosha" />
-      <option name="MAIN_CLASS_NAME" value="com.xie.miaosha.MiaoshaApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xie.miaosha.MiaoshaApplication" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MiaoshaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="miaosha" />
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="doramon" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.xie.miaosha.MiaoshaApplication" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UserUtil" />
-        <item itemvalue="Application.MD5Util" />
-        <item itemvalue="JUnit.MiaoshaApplicationTests.contextLoads" />
-        <item itemvalue="Application.ValidatorUtils" />
+        <item itemvalue="Spring Boot.MiaoshaApplication" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@65e44cd7" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </treeState>
-      </serviceView>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -210,10 +223,97 @@
       <workItem from="1585664676207" duration="5341000" />
       <workItem from="1585708364830" duration="29689000" />
       <workItem from="1585878919578" duration="16747000" />
+      <workItem from="1599912423217" duration="913000" />
+      <workItem from="1599914136972" duration="2454000" />
+      <workItem from="1599961429338" duration="722000" />
+      <workItem from="1599962174082" duration="292000" />
+      <workItem from="1599962481805" duration="2374000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update files" />
+    <option name="LAST_COMMIT_MESSAGE" value="update files" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="249" y="0" key="#Project_Structure" timestamp="1599914148104">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1599914148104" />
+    <state x="179" y="254" key="#SQL_Dialects" timestamp="1599915027459">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="179" y="254" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1599915027459" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599914978797">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599914978797" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1599963471129">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1599963471129" />
+    <state x="498" y="201" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1599914915530">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="201" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1599914915530" />
+    <state x="388" y="90" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1599914795473">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="388" y="90" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824@0.0.1536.824" timestamp="1599914795473" />
+    <state width="1493" height="322" key="GridCell.Tab.0.bottom" timestamp="1599923339972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="322" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599923339972" />
+    <state width="1493" height="322" key="GridCell.Tab.0.center" timestamp="1599923339972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="322" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599923339972" />
+    <state width="1493" height="322" key="GridCell.Tab.0.left" timestamp="1599923339972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="322" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599923339972" />
+    <state width="1493" height="322" key="GridCell.Tab.0.right" timestamp="1599923339972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="322" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599923339972" />
+    <state width="1493" height="322" key="GridCell.Tab.1.bottom" timestamp="1599923339972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="322" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599923339972" />
+    <state width="1493" height="322" key="GridCell.Tab.1.center" timestamp="1599923339972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="322" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599923339972" />
+    <state width="1493" height="322" key="GridCell.Tab.1.left" timestamp="1599923339972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="322" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599923339972" />
+    <state width="1493" height="322" key="GridCell.Tab.1.right" timestamp="1599923339972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="322" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599923339972" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1599912709096">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1599912709096" />
+    <state x="270" y="0" key="SettingsEditor" timestamp="1599962160889">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599962160889" />
   </component>
 </project>

@@ -54,16 +54,17 @@ public class MiaoshaService {
 
     /**
      *
-     * @param userId
-     * @param goodsId
+     * @param userId s
+     * @param goodsId s
      * @return 0 排队中　OrderId 秒杀成功　　－１ 秒杀结束
      *
      */
     public long getMiaoshaResult(long userId, long goodsId) {
         MiaoshaOrder order = orderService.getOrderByUserIdAndGoodsId(userId, goodsId);
         if (order!=null)//秒杀成功
+        {
             return order.getOrderId();
-        else {
+        } else {
             boolean isOver = getGoodsOver(goodsId);
             if (isOver){
                 return -1;

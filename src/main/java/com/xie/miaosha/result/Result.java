@@ -2,7 +2,7 @@ package com.xie.miaosha.result;
 
 import lombok.Data;
 
-@Data
+
 public class Result<T> {
     private  int code;
     private String msg;
@@ -25,8 +25,9 @@ public class Result<T> {
     }
 
     private Result(CodeMsg codeMsg){
-        if (codeMsg == null)
+        if (codeMsg == null) {
             return;
+        }
         this.code = codeMsg.getCode();
         this.msg = codeMsg.getMsg();
     }

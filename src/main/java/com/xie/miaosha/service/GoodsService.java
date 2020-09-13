@@ -18,7 +18,6 @@ public class GoodsService {
     public List<GoodsVo> getGoodsVoList(){
         return goodsDao.getGoodsVoList();
     }
-    //根据goodId查找
     public GoodsVo getGoodsVoByGoodsId(long goodsId){
         return goodsDao.getGoodsVoByGoodsId(goodsId);
     }

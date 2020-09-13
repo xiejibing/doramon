@@ -3,7 +3,7 @@ package com.xie.miaosha.controller;
 import com.xie.miaosha.access.AccessLimit;
 import com.xie.miaosha.domain.MiaoshaOrder;
 import com.xie.miaosha.domain.MiaoshaUser;
-import com.xie.miaosha.rabbitmq.MQSender;
+import com.xie.miaosha.rabbitmq.MqSender;
 import com.xie.miaosha.rabbitmq.MiaoshaMessage;
 import com.xie.miaosha.redis.*;
 import com.xie.miaosha.result.CodeMsg;
@@ -39,9 +39,11 @@ public class MiaoshaController implements InitializingBean {//实现Initializing
     @Autowired
     RedisService redisService;
     @Autowired
-    MQSender sender;
+    MqSender sender;
 
-    //内存标记,标记每个商品是否秒杀结束了
+    /**
+     * 内存标记,标记每个商品是否秒杀结束了
+     */
     Map<Long, Boolean> localOverMap = new HashMap<Long, Boolean>();
 
     /**
@@ -51,12 +53,13 @@ public class MiaoshaController implements InitializingBean {//实现Initializing
     @Override
     public void afterPropertiesSet() throws Exception {
         List<GoodsVo> goodsVoList = goodsService.getGoodsVoList();
-        if(goodsVoList==null)
+        if(goodsVoList==null) {
             return;
-        for (GoodsVo goodsVo:goodsVoList){//将每个秒杀商品的库存和开始时间放入ｒｅｄｉｓ
+        }
+        for (GoodsVo goodsVo:goodsVoList){
             redisService.set(GoodsKey.getGoodsStock,""+goodsVo.getId(),goodsVo.getStockCount());
             redisService.set(MiaoshaKey.getMiaoshaStartTime,""+goodsVo.getId(),goodsVo.getStartDate().getTime());
-            localOverMap.put(goodsVo.getId(),false);//设置每个商品没有秒杀完
+            localOverMap.put(goodsVo.getId(),false);
         }
 
     }

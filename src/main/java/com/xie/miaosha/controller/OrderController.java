@@ -26,12 +26,14 @@ public class OrderController {
     @RequestMapping("/detail")
     @ResponseBody
     public Result<OrderDetailVo> getOrderDetail(MiaoshaUser user, @RequestParam("orderId") long orderId){
-        if (user == null)
+        if (user == null) {
             return Result.error(CodeMsg.SESSION_ERROR);
+        }
         OrderDetailVo orderDetailVo = new OrderDetailVo();
         OrderInfo orderInfo = orderService.getOrderById(orderId);
-        if (orderInfo == null)
+        if (orderInfo == null) {
             return Result.error(CodeMsg.ORDER_NOT_EXISTS);
+        }
         Long goodsId = orderInfo.getGoodsId();
         GoodsVo goodsVo = goodsService.getGoodsVoByGoodsId(goodsId);
         orderDetailVo.setOrderInfo(orderInfo);

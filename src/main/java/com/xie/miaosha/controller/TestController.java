@@ -2,7 +2,7 @@ package com.xie.miaosha.controller;
 
 import com.xie.miaosha.domain.MiaoshaUser;
 import com.xie.miaosha.domain.User;
-import com.xie.miaosha.rabbitmq.MQSender;
+import com.xie.miaosha.rabbitmq.MqSender;
 import com.xie.miaosha.redis.RedisService;
 import com.xie.miaosha.redis.UserKey;
 import com.xie.miaosha.result.CodeMsg;
@@ -10,11 +10,13 @@ import com.xie.miaosha.result.Result;
 import com.xie.miaosha.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * @author 14423
+ */
 @Controller
 @RequestMapping("/user")
 public class TestController {
@@ -23,7 +25,7 @@ public class TestController {
     @Autowired
     RedisService redisService;
     @Autowired
-    MQSender sender;
+    MqSender sender;
 
     @RequestMapping("/info")
     @ResponseBody

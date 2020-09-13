@@ -3,10 +3,41 @@ package com.xie.miaosha.vo;
 import com.xie.miaosha.domain.MiaoshaUser;
 import lombok.Data;
 
-@Data
 public class GoodsDetailVo {
     private int miaoshaStatus = 0;
     private long remainSeconds = 0;
     private GoodsVo goods ;
     private MiaoshaUser user;
+
+    public int getMiaoshaStatus() {
+        return miaoshaStatus;
+    }
+
+    public void setMiaoshaStatus(int miaoshaStatus) {
+        this.miaoshaStatus = miaoshaStatus;
+    }
+
+    public long getRemainSeconds() {
+        return remainSeconds;
+    }
+
+    public void setRemainSeconds(long remainSeconds) {
+        this.remainSeconds = remainSeconds;
+    }
+
+    public GoodsVo getGoods() {
+        return goods;
+    }
+
+    public void setGoods(GoodsVo goods) {
+        this.goods = goods;
+    }
+
+    public MiaoshaUser getUser() {
+        return user;
+    }
+
+    public void setUser(MiaoshaUser user) {
+        this.user = user;
+    }
 }

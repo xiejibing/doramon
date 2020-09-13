@@ -21,27 +21,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
+/**
+ * @author 谢吉兵
+ */
 @Controller
 @RequestMapping("/goods")
 public class GoodsController {
     @Autowired
     MiaoshaUserService miaoshaUserService;
     @Autowired
-    RedisService redisService;
+    private RedisService redisService;
     @Autowired
     GoodsService goodsService;
     @Autowired
     ThymeleafViewResolver thymeleafViewResolver;
-
-
-//    @RequestMapping(value = "/to_list")
-//    public String toGoodsList(Model model, MiaoshaUser user) {
-//        model.addAttribute("user",user);
-//        //查询商品列表
-//        List<GoodsVo> goodsVoList = goodsService.getGoodsVoList();
-//        model.addAttribute("goodsList",goodsVoList);
-//        return "goods_list";
-//    }
 
     /**
      * 使用页面缓存进行优化
@@ -55,8 +48,9 @@ public class GoodsController {
         model.addAttribute("user",user);
         //从缓存中获取goods_list.html
         String html = redisService.get(GoodsKey.getGoodsList,"",String.class);
+        //如果缓存中有，则直接返回
         if(!StringUtils.isEmpty(html)){
-            return html;//如果缓存中有，则直接返回
+            return html;
         }
         //查询商品列表
         List<GoodsVo> goodsVoList = goodsService.getGoodsVoList();
@@ -71,21 +65,18 @@ public class GoodsController {
         return html;
     }
 
-    //页面静态化
     @RequestMapping("/detail/{goodsId}")
     @ResponseBody
     public Result<GoodsDetailVo> toDetail(Model model, MiaoshaUser user, @PathVariable(value = "goodsId") long goodsId, HttpServletRequest request, HttpServletResponse response ) {
-
         //根据goodsId查询秒杀详情
         GoodsVo goods= goodsService.getGoodsVoByGoodsId(goodsId);
         long startAt = goods.getStartDate().getTime();
         long endAt = goods.getEndDate().getTime();
-        long now = System.currentTimeMillis();//当前时间
+        long now = System.currentTimeMillis();
         int status = 0;
-        long remainSeconds = 0;//剩余时间
+        long remainSeconds = 0;
         if (now<startAt){
             //秒杀未开始
-            status = 0;
             remainSeconds = (startAt-now)/1000;
         }else if (now > endAt){
             //秒杀结束
@@ -93,7 +84,6 @@ public class GoodsController {
             remainSeconds = -1;
         }else {//正在秒杀
             status = 1;
-            remainSeconds = 0;
         }
         GoodsDetailVo goodsDetailVo = new GoodsDetailVo();
         goodsDetailVo.setUser(user);
@@ -103,7 +93,9 @@ public class GoodsController {
         return Result.success(goodsDetailVo);
     }
 
-    ///----------------------使用页面缓存技术-----------------------
+    /**
+     * 使用页面缓存技术
+     */
     @RequestMapping("/to_detail2/{goodsId}")
     @ResponseBody
     public String toDetail2(Model model, MiaoshaUser user, @PathVariable(value = "goodsId") long goodsId,HttpServletRequest request, HttpServletResponse response ) {
@@ -111,7 +103,7 @@ public class GoodsController {
         //从缓存中获取goods_detail.html
         String html = redisService.get(GoodsKey.getGoodsDetail,"",String.class);
         if(!StringUtils.isEmpty(html)){
-            return html;//如果缓存中有，则直接返回
+            return html;
         }
         model.addAttribute("user",user);
         //根据goodsId查询秒杀详情
@@ -119,12 +111,11 @@ public class GoodsController {
         model.addAttribute("goods",goods);
         long startAt = goods.getStartDate().getTime();
         long endAt = goods.getEndDate().getTime();
-        long now = System.currentTimeMillis();//当前时间
+        long now = System.currentTimeMillis();
         int status = 0;
-        long remainSeconds = 0;//剩余时间
+        long remainSeconds = 0;
         if (now<startAt){
             //秒杀未开始
-            status = 0;
             remainSeconds = (startAt-now)/1000;
         }else if (now > endAt){
             //秒杀结束
@@ -132,7 +123,6 @@ public class GoodsController {
             remainSeconds = -1;
         }else {//正在秒杀
             status = 1;
-            remainSeconds = 0;
         }
         model.addAttribute("miaoshaStatus",status);
         model.addAttribute("remainSeconds",remainSeconds);

@@ -25,9 +25,13 @@ public class MiaoshaUserService {
     @Autowired
     RedisService redisService;
 
-    public static final String COOKI_NAME_TOKEN = "token";//定义cookie的名字
+    public static final String COOKI_NAME_TOKEN = "token";
 
-    //根据令牌从ｒｅｄｉｓ中查询
+    /**
+     * @param response
+     * @param token
+     * @return
+     */
     public MiaoshaUser getByToken(HttpServletResponse response, String token){
         if (StringUtils.isEmpty(token)){
             return null;
@@ -41,16 +45,18 @@ public class MiaoshaUserService {
         return miaoshaUser;
     }
 
-    //从数据库中根据ｉｄ查询用户
+
     public MiaoshaUser getById(long id){
         //取缓存
         MiaoshaUser miaoshaUser = redisService.get(MiaoshaUserKey.getById, "" + id, MiaoshaUser.class);
-        if (miaoshaUser!=null)
+        if (miaoshaUser!=null) {
             return miaoshaUser;
+        }
         //从数据库中查询
         miaoshaUser =  userDao.getById(id);
-        if (miaoshaUser!=null)
+        if (miaoshaUser!=null) {
             redisService.set(MiaoshaUserKey.getById,""+id,miaoshaUser);
+        }
         return miaoshaUser;
     }
 
@@ -64,8 +70,9 @@ public class MiaoshaUserService {
     public boolean updatePassword(long id, String token, String formPassword){
         //查询用户
         MiaoshaUser miaoshaUser = getById(id);
-        if (miaoshaUser == null)
+        if (miaoshaUser == null) {
             throw new GlobalException(CodeMsg.MOBILE_NOT_EXIST_ERROR);//用户不存在
+        }
         MiaoshaUser userUpdate = new MiaoshaUser();
         userUpdate.setId(id);
         userUpdate.setPassword(MD5Util.formPassToDBPass(formPassword,miaoshaUser.getSalt()));

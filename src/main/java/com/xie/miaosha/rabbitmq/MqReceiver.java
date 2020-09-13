@@ -2,7 +2,6 @@ package com.xie.miaosha.rabbitmq;
 
 import com.xie.miaosha.domain.MiaoshaOrder;
 import com.xie.miaosha.domain.MiaoshaUser;
-import com.xie.miaosha.domain.OrderInfo;
 import com.xie.miaosha.redis.RedisService;
 import com.xie.miaosha.service.GoodsService;
 import com.xie.miaosha.service.MiaoshaService;
@@ -15,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MQReceiver {
+public class MqReceiver {
     @Autowired
     RedisService redisService;
     @Autowired
@@ -24,10 +23,10 @@ public class MQReceiver {
     OrderService orderService;
     @Autowired
     MiaoshaService miaoshaService;
-    private static Logger logger = LoggerFactory.getLogger(MQReceiver.class);
+    private static Logger logger = LoggerFactory.getLogger(MqReceiver.class);
 
 
-    @RabbitListener(queues = MQConfig.MIAOSHA_QUEUE)//监听哪个队列的消息
+    @RabbitListener(queues = MqConfig.MIAOSHA_QUEUE)//监听哪个队列的消息
     public void receiveMiaoshaMsg(String message) {
         MiaoshaMessage miaoshaMessage = RedisService.stringToBean(message, MiaoshaMessage.class);
         //获取秒杀信息
@@ -36,12 +35,14 @@ public class MQReceiver {
         //查询库存
         GoodsVo goodsVo= goodsService.getGoodsVoByGoodsId(goodsId);
         Integer stockCount = goodsVo.getStockCount();
-        if (stockCount<=0)
+        if (stockCount<=0) {
             return ;
+        }
         //判断是否重复秒杀
         MiaoshaOrder order = orderService.getOrderByUserIdAndGoodsId(miaoshaUser.getId(), goodsId);
-        if (order!=null)
+        if (order!=null) {
             return;
+        }
         //秒杀---减库存，下订单
         miaoshaService.miaosha(miaoshaUser, goodsVo);
     }
@@ -52,22 +53,22 @@ public class MQReceiver {
      *
      * @param message
      */
-    @RabbitListener(queues = MQConfig.QUEUE)//监听哪个队列的消息
+    @RabbitListener(queues = MqConfig.QUEUE)//监听哪个队列的消息
     public void receive(String message) {
         logger.info("receive message:" + message);
     }
 
-    @RabbitListener(queues = MQConfig.TOPIC_QUEUE1)//监听哪个队列的消息
+    @RabbitListener(queues = MqConfig.TOPIC_QUEUE1)//监听哪个队列的消息
     public void receiveTopic1(String message) {
         logger.info("topic1 receive message:" + message);
     }
 
-    @RabbitListener(queues = MQConfig.TOPIC_QUEUE2)//监听哪个队列的消息
+    @RabbitListener(queues = MqConfig.TOPIC_QUEUE2)//监听哪个队列的消息
     public void receiveTopic2(String message) {
         logger.info("topic2 receive message:" + message);
     }
 
-    @RabbitListener(queues = MQConfig.Headers_QUEUE)//监听哪个队列的消息
+    @RabbitListener(queues = MqConfig.Headers_QUEUE)//监听哪个队列的消息
     public void receiveHeaders(byte[] message) {
         logger.info("Headers receive message:" + new String(message));
     }

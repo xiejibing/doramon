@@ -10,6 +10,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * @author 14423
+ */
 @Mapper
 @Repository
 public interface GoodsDao {
@@ -22,7 +25,6 @@ public interface GoodsDao {
             " where g.id = #{goodsId}")
     GoodsVo getGoodsVoByGoodsId(@Param("goodsId") long goodsId);
 
-    //更新库存
     @Update("update miaosha_goods set stock_count = stock_count - 1 where goods_id = #{goodsId} and stock_count>0")
     int  reduceStock(MiaoshaGoods goods);
 

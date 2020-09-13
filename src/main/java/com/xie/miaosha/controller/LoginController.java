@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+/**
+ * @author 谢吉兵
+ */
 @Controller
 @RequestMapping("/login")
 public class LoginController {
@@ -35,20 +38,6 @@ public class LoginController {
     @RequestMapping("/do_login")
     @ResponseBody
     public Result<String> doLogin(@Valid LoginVo loginVo, HttpServletResponse response) {
-        //log.info(loginVo.toString());
-        //使用@IsMobile注解和@NotNUll来完成
-//        //参数校验
-//        if (StringUtils.isEmpty(passInput)){//密码为空
-//           return Result.error(CodeMsg.PASSWORD_EMPTY);
-//        }
-//        if (StringUtils.isEmpty(mobile)){//手机号码为空
-//            return Result.error(CodeMsg.MOBILE_EMPTY);
-//        }
-//
-//        if (!ValidatorUtils.isMobile(mobile)){//手机号校验
-//            return Result.error(CodeMsg.MOBILE_ERROR);
-//        }
-        //登录
         String token = userService.login(loginVo, response);
         return Result.success(token);
     }

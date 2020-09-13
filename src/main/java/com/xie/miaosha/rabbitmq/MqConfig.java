@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-public class MQConfig {
+public class MqConfig {
 
     public static final String QUEUE = "queue";
     public static final String MIAOSHA_QUEUE = "miaosha.queue";
