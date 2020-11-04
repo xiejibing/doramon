@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author 14423
+ */
 @Service
 public class GoodsService {
     @Autowired

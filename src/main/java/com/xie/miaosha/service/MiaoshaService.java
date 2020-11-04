@@ -36,10 +36,10 @@ public class MiaoshaService {
         //减库存
        if(goodsService.reduceStock(goodsVo)==1){
            //生成订单
-           OrderInfo orderInfo = orderService.createOrder(user, goodsVo);
-           return orderInfo;
+           return orderService.createOrder(user, goodsVo);
        }
-       else {//减库存失败,秒杀结束
+       else {
+           //减库存失败,秒杀结束
            setGoodsOver(goodsVo.getId());
            return null;
        }
@@ -134,7 +134,8 @@ public class MiaoshaService {
         g.drawString(verifyCode, 8, 24);
         g.dispose();
         //把验证码存到redis中
-        int rnd = calc(verifyCode);//计算
+        int rnd = calc(verifyCode);
+        //计算
         redisService.set(MiaoshaKey.getMiaoshaVerifyCode, user.getId()+","+goodsId, rnd);
         //输出图片
         return image;
@@ -160,8 +161,7 @@ public class MiaoshaService {
         char op1 = ops[rdm.nextInt(3)];
         char op2 = ops[rdm.nextInt(3)];
         char op3 = ops[rdm.nextInt(3)];
-        String exp = ""+num1+op1+num2+op2+num3;
-        return exp;
+        return ""+num1+op1+num2+op2+num3;
     }
 
     //校验验证码

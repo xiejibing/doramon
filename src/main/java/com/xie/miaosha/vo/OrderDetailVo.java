@@ -1,8 +1,6 @@
 package com.xie.miaosha.vo;
 
 import com.xie.miaosha.domain.OrderInfo;
-import lombok.Data;
-
 
 /**
  * @author 14423

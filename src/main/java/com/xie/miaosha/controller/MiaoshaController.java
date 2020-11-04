@@ -26,10 +26,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author 14423
+ */
 @Controller
 @RequestMapping("/miaosha")
-public class MiaoshaController implements InitializingBean {//实现InitializingBean接口,系统初始化
-
+public class MiaoshaController implements InitializingBean {
+    //实现InitializingBean接口,系统初始化
     @Autowired
     GoodsService goodsService;
     @Autowired
@@ -44,14 +47,13 @@ public class MiaoshaController implements InitializingBean {//实现Initializing
     /**
      * 内存标记,标记每个商品是否秒杀结束了
      */
-    Map<Long, Boolean> localOverMap = new HashMap<Long, Boolean>();
+    Map<Long, Boolean> localOverMap = new HashMap<>();
 
     /**
      * 系统初始化
-     * @throws Exception
      */
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet()  {
         List<GoodsVo> goodsVoList = goodsService.getGoodsVoList();
         if(goodsVoList==null) {
             return;
@@ -67,23 +69,26 @@ public class MiaoshaController implements InitializingBean {//实现Initializing
     @RequestMapping(value = "/{path}/do_miaosha",method = RequestMethod.GET )
     @ResponseBody
     public Result<Integer> doMiaosha(MiaoshaUser user, @RequestParam("goodsId") long goodsId,
+
                                      @PathVariable("path") String path) {
+        //用户没有登录
         if (user == null) {
-            return Result.error(CodeMsg.SESSION_ERROR);//用户没有登录
+            return Result.error(CodeMsg.SESSION_ERROR);
         }
         //检查秒杀是否开始
         boolean isStart = miaoshaService.isMiaoshaStart(goodsId);
         if (!isStart){
             return Result.error(CodeMsg.MIAOSHA_WAIT);
         }
-        //校验path,前端发过来的path和ｒｅｄｉｓ中的是否一致
+        //校验path,前端发过来的path和redis中的是否一致
         boolean check = miaoshaService.checkPath(user.getId(),goodsId,path);
         if (!check){
             return Result.error(CodeMsg.REQUEST_ILLEGAL);
         }
         //内存标记，减小redis访问
         boolean isOver = localOverMap.get(goodsId);
-        if (isOver){//该商品的标记为ｔrue，已经抢完
+        if (isOver){
+            //该商品的标记为true，已经抢完
             return Result.error(CodeMsg.MIAOSHA_OVER);
         }
         //预减库存
@@ -110,7 +115,8 @@ public class MiaoshaController implements InitializingBean {//实现Initializing
     @ResponseBody
     public Result<Long> getMiaoshaResult(MiaoshaUser user, @RequestParam("goodsId") long goodsId) {
         if (user == null) {
-            return Result.error(CodeMsg.SESSION_ERROR);//用户没有登录
+            //用户没有登录
+            return Result.error(CodeMsg.SESSION_ERROR);
         }
         long result = miaoshaService.getMiaoshaResult(user.getId(),goodsId);
         return Result.success(result);
@@ -118,9 +124,8 @@ public class MiaoshaController implements InitializingBean {//实现Initializing
 
     /**
      * 获取秒杀地址
-     * @param user
-     * @param goodsId
-     * @return
+     * @param user 用户
+     * @param goodsId 商品ID
      */
     @AccessLimit(seconds = 5, maxCount = 10,needLogin = true)
     @RequestMapping(value = "/path",method = RequestMethod.GET )
@@ -128,7 +133,7 @@ public class MiaoshaController implements InitializingBean {//实现Initializing
     public Result<String> getMiaoshaPath(MiaoshaUser user, HttpServletRequest request,
                                          @RequestParam("goodsId") long goodsId, @RequestParam(value = "verifyCode",defaultValue = "1") int verifyCode) {
         if (user == null) {
-            return Result.error(CodeMsg.SESSION_ERROR);//用户没有登录
+            return Result.error(CodeMsg.SESSION_ERROR);
         }
         //校验验证码
         boolean isRightVerifyCode = miaoshaService.checkVerifyCode(user,goodsId,verifyCode);
@@ -142,14 +147,12 @@ public class MiaoshaController implements InitializingBean {//实现Initializing
 
     /**
      * 验证码
-     * @param response
-     * @param user
-     * @param goodsId
-     * @return
+     * @param user 用户
+     * @param goodsId 商品ID
      */
     @RequestMapping(value="/verifyCode", method=RequestMethod.GET)
     @ResponseBody
-    public Result<String> getMiaoshaVerifyCod(HttpServletResponse response, MiaoshaUser user,
+    public Result<String> getMiaoshaVerifyCode(HttpServletResponse response, MiaoshaUser user,
                                               @RequestParam("goodsId")long goodsId) {
         if (user == null) {
             return Result.error(CodeMsg.SESSION_ERROR);

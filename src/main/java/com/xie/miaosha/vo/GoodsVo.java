@@ -1,7 +1,5 @@
 package com.xie.miaosha.vo;
-
 import com.xie.miaosha.domain.Goods;
-import lombok.Data;
 
 import java.util.Date;
 /**

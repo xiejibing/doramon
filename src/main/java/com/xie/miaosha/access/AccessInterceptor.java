@@ -33,7 +33,8 @@ public class AccessInterceptor extends HandlerInterceptorAdapter {
             HandlerMethod hm = (HandlerMethod) handler;
             AccessLimit accessLimit = hm.getMethodAnnotation(AccessLimit.class);//获取方法的注解
             if (accessLimit == null){
-                return true;//如果没有访问限制注解，直接放行
+                return true;
+                //如果没有访问限制注解，直接放行
             }
             //获取user对象
             MiaoshaUser user = getUser(request,response);
@@ -41,9 +42,9 @@ public class AccessInterceptor extends HandlerInterceptorAdapter {
             int maxCount = accessLimit.maxCount();
             int seconds = accessLimit.seconds();
             boolean needLogin = accessLimit.needLogin();
-            String uri = request.getRequestURI();
-            String key = uri;
-            if (needLogin){//如果需要登录
+            String key = request.getRequestURI();
+            if (needLogin){
+                //如果需要登录
                 if (user==null)
                 {//没有获取到ｕｓｅｒ
                     render(response,CodeMsg.SESSION_ERROR);
@@ -69,7 +70,8 @@ public class AccessInterceptor extends HandlerInterceptorAdapter {
     //渲染页面
     private void render(HttpServletResponse response, CodeMsg codeMsg) throws IOException {
         response.setContentType("application/json;charset=UTF-8");
-        OutputStream outputStream = response.getOutputStream();//获取输出流,返回给请求
+        OutputStream outputStream = response.getOutputStream();
+        //获取输出流,返回给请求
         String str = JSON.toJSONString(Result.error(codeMsg));
         outputStream.write(str.getBytes());
         outputStream.flush();
@@ -85,13 +87,13 @@ public class AccessInterceptor extends HandlerInterceptorAdapter {
         }
         String token = StringUtils.isEmpty(paramToken)?cookieToken:paramToken;
         //得到token后就可以从redis中取出用户信息
-        MiaoshaUser user = miaoshaUserService.getByToken(response,token);
-        return user;
+        return miaoshaUserService.getByToken(response,token);
     }
     private String getCookieValue(HttpServletRequest request){
         Cookie[] cookies = request.getCookies();
-        if(cookies==null||cookies.length<=0)
+        if(cookies==null||cookies.length<=0) {
             return null;
+        }
         for (Cookie cookie:cookies){
             if (cookie.getName().equals(MiaoshaUserService.COOKI_NAME_TOKEN)){
                 return cookie.getValue();

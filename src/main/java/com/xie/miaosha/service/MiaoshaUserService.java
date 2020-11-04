@@ -100,8 +100,9 @@ public class MiaoshaUserService {
         }
         //校验密码是否正确
         String DBSalt = miaoshaUser.getSalt();
-        String calcPassword = MD5Util.formPassToDBPass(formPassword,DBSalt);//根据从数据库的ｓａｌｔ计算出来的ｐａｓｓword
-        if (!calcPassword.equals(miaoshaUser.getPassword())){//
+        String calcPassword = MD5Util.formPassToDBPass(formPassword,DBSalt);
+        //根据从数据库的ｓａｌｔ计算出来的ｐａｓｓword
+        if (!calcPassword.equals(miaoshaUser.getPassword())){
             throw new GlobalException( CodeMsg.PASSWORD_ERROR);
         }
         //生成cookie
