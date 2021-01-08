@@ -1,6 +1,5 @@
 package com.xie.miaosha.result;
 
-import lombok.Data;
 
 
 public class Result<T> {
@@ -8,8 +7,31 @@ public class Result<T> {
     private String msg;
     private T data;
 
+    public int getCode() {
+        return code;
+    }
 
-//    成功时调用
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    //    成功时调用
     public static<T> Result<T> success(T data){
         return new Result<T>(data);
     }

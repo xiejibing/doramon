@@ -19,6 +19,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
 
+/**
+ * @author 14423
+ */
 @Component
 public class AccessInterceptor extends HandlerInterceptorAdapter {
     @Autowired

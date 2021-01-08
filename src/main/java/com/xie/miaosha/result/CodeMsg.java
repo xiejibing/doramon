@@ -1,7 +1,6 @@
 package com.xie.miaosha.result;
 
 import com.xie.miaosha.domain.OrderInfo;
-import lombok.Data;
 
 public class CodeMsg {
 

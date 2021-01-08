@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
 
 @Service
 public class RedisService {
@@ -103,8 +104,9 @@ public class RedisService {
      * @return
      */
     public static <T> String beanToString(T value){
-        if (value == null)
+        if (value == null) {
             return null;
+        }
         Class<?> clazz = value.getClass();//value的类型
         if (clazz == int.class ||clazz==Integer.class){
             return ""+value;
@@ -127,8 +129,9 @@ public class RedisService {
      * @return
      */
     public static <T> T stringToBean(String str, Class<T> clazz){
-        if (str == null  || str.length()<=0 || clazz == null)
+        if (str == null  || str.length()<=0 || clazz == null) {
             return null;
+        }
         if (clazz == int.class || clazz == Integer.class){
            return (T) Integer.valueOf(str);
         }
@@ -143,8 +146,9 @@ public class RedisService {
     }
 
     private void returnToPool(Jedis jedis){
-        if (jedis!=null)
+        if (jedis!=null) {
             jedis.close();
+        }
     }
 
     //删除
@@ -158,5 +162,20 @@ public class RedisService {
         }finally {
             returnToPool(jedis);//回收连接
         }
+    }
+
+    public static void main(String[] args) {
+        JedisPoolConfig poolConfig = new JedisPoolConfig();
+        poolConfig.setMaxWaitMillis(5000);
+        poolConfig.setMaxTotal(50000);
+        poolConfig.setMaxIdle(500);
+        JedisPool jedisPool = new JedisPool(poolConfig, "47.103.208.206",6379,500, "197526");
+        Jedis jedis = jedisPool.getResource();
+        try {
+            jedis.set("test","1");
+        }catch (Exception e){
+            System.out.println("error");
+        }
+        jedis.close();
     }
 }

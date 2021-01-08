@@ -1,6 +1,5 @@
 package com.xie.miaosha.domain;
 
-import lombok.Data;
 
 
 public class MiaoshaOrder {

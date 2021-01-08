@@ -1,19 +1,25 @@
 package com.xie.miaosha.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.xie.miaosha.access.AccessLimit;
 import com.xie.miaosha.domain.MiaoshaOrder;
 import com.xie.miaosha.domain.MiaoshaUser;
-import com.xie.miaosha.rabbitmq.MqSender;
-import com.xie.miaosha.rabbitmq.MiaoshaMessage;
 import com.xie.miaosha.redis.*;
 import com.xie.miaosha.result.CodeMsg;
 import com.xie.miaosha.result.Result;
+import com.xie.miaosha.rocketmq.MiaoshaMessage;
 import com.xie.miaosha.service.GoodsService;
 import com.xie.miaosha.service.OrderService;
 import com.xie.miaosha.service.MiaoshaService;
 import com.xie.miaosha.vo.GoodsVo;
+import org.apache.rocketmq.client.producer.TransactionSendResult;
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,12 +48,14 @@ public class MiaoshaController implements InitializingBean {
     @Autowired
     RedisService redisService;
     @Autowired
-    MqSender sender;
+    RocketMQTemplate rocketMQTemplate;
+
+    private final static Logger logger = LoggerFactory.getLogger(MiaoshaController.class);
 
     /**
      * 内存标记,标记每个商品是否秒杀结束了
      */
-    Map<Long, Boolean> localOverMap = new HashMap<>();
+    private volatile Map<Long, Boolean> localOverMap = new HashMap<>();
 
     /**
      * 系统初始化
@@ -104,12 +112,13 @@ public class MiaoshaController implements InitializingBean {
         }
         //消息入队
         MiaoshaMessage miaoshaMessage = new MiaoshaMessage();
-        miaoshaMessage.setMiaoshaUser(user);
+        miaoshaMessage.setUser(user);
         miaoshaMessage.setGoodsId(goodsId);
-        sender.sendMiaoshaMessage(miaoshaMessage);
+        Message<String> message = MessageBuilder.withPayload(JSON.toJSONString(miaoshaMessage)).build();
+        TransactionSendResult result = rocketMQTemplate.sendMessageInTransaction("miaosha_producer_group1", "miaoshaTopic", message, null);
+        logger.info("发送消息body={}, result={}",message.getPayload(),result.getSendStatus());
         return Result.success(0);
     }
-
 
     @RequestMapping(value = "/result",method = RequestMethod.GET )
     @ResponseBody

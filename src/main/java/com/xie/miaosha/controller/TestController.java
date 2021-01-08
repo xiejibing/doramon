@@ -2,7 +2,6 @@ package com.xie.miaosha.controller;
 
 import com.xie.miaosha.domain.MiaoshaUser;
 import com.xie.miaosha.domain.User;
-import com.xie.miaosha.rabbitmq.MqSender;
 import com.xie.miaosha.redis.RedisService;
 import com.xie.miaosha.redis.UserKey;
 import com.xie.miaosha.result.CodeMsg;
@@ -25,13 +24,8 @@ public class TestController {
     @Autowired
     RedisService redisService;
     @Autowired
-    MqSender sender;
 
-    @RequestMapping("/info")
-    @ResponseBody
-    public Result<MiaoshaUser> test(Model model, MiaoshaUser user){
-        return Result.success(user);
-    }
+
     @RequestMapping("/helloSuccess")
     @ResponseBody
     public Result<String> success(){
@@ -67,29 +61,4 @@ public class TestController {
         return Result.success(user);
     }
 
-    @RequestMapping("/mq")
-    @ResponseBody
-    public Result<String> mq(){
-        sender.send("hello mq ,i am sender");
-        return Result.success("hello mq");
-    }
-    @RequestMapping("/mqTopic")
-    @ResponseBody
-    public Result<String> mqTopic(){
-        sender.sendTopic("hello mq, I am sender");
-        return Result.success("hello mq");
-    }
-
-    @RequestMapping("/mqFanout")
-    @ResponseBody
-    public Result<String> mqFanout(){
-        sender.sendFanout("hello mq, I am sender");
-        return Result.success("hello mq");
-    }
-    @RequestMapping("/mqHeaders")
-    @ResponseBody
-    public Result<String> mqHeaders(){
-        sender.sendHeaders("hello mq, I am sender");
-        return Result.success("hello mq");
-    }
 }

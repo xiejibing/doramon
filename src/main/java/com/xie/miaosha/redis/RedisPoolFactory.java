@@ -13,11 +13,13 @@ public class RedisPoolFactory {
     RedisConfig redisConfig;
 
     @Bean
-    public JedisPool jedisPoolFactory(){
+    public JedisPool JedisPoolFactory(){
+        //jedisPool配置文件
         JedisPoolConfig poolConfig = new JedisPoolConfig();
         poolConfig.setMaxWaitMillis(redisConfig.getPoolMaxWait()*1000);
         poolConfig.setMaxTotal(redisConfig.getPoolMaxTotal());
         poolConfig.setMaxIdle(redisConfig.getPoolMaxIdle());
+        //jedisPool
         JedisPool jedisPool = new JedisPool(poolConfig,redisConfig.getHost(),redisConfig.getPort(),
                 redisConfig.getTimeout(),redisConfig.getPassword());
         return jedisPool;

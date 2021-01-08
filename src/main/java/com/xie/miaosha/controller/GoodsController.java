@@ -8,6 +8,8 @@ import com.xie.miaosha.service.GoodsService;
 import com.xie.miaosha.service.MiaoshaUserService;
 import com.xie.miaosha.vo.GoodsDetailVo;
 import com.xie.miaosha.vo.GoodsVo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +38,7 @@ public class GoodsController {
     @Autowired
     ThymeleafViewResolver thymeleafViewResolver;
 
+    private final static Logger logger = LoggerFactory.getLogger(GoodsController.class);
     /**
      * 使用页面缓存进行优化
      * @param model
@@ -75,6 +78,7 @@ public class GoodsController {
         long now = System.currentTimeMillis();
         int status = 0;
         long remainSeconds = 0;
+        logger.info("now"+now+", endAt:"+endAt);
         if (now<startAt){
             //秒杀未开始
             remainSeconds = (startAt-now)/1000;
@@ -114,6 +118,7 @@ public class GoodsController {
         long now = System.currentTimeMillis();
         int status = 0;
         long remainSeconds = 0;
+        logger.info("now"+now+", endAt:"+endAt);
         if (now<startAt){
             //秒杀未开始
             remainSeconds = (startAt-now)/1000;
